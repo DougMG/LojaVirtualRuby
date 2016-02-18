@@ -15,9 +15,12 @@ class Biblioteca
 	end
 	
 	# Usando bloco
-	def livros_por_categoria(categoria)
+	def livros_por_categoria(categoria, bloco_com_p, bloco_com_puts)
 		@livros[categoria].each do |livro|
-			yield livro if block_given?
+			#yield livro if block_given?
+			# Sem o &, transformamos o bloco em um objeto novamente
+			bloco_com_p.call livro
+			bloco_com_puts.call livro
 		end
 	end
 
