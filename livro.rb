@@ -1,9 +1,9 @@
 # coding: utf-8
-class Livro
+class Livro < Midia
 	attr_accessor :valor
-	attr_reader :titulo, :autor, :categoria, :isbn
+	attr_reader :autor, :categoria, :titulo
 
-	def initialize(titulo, autor, isbn = 1, numero_de_paginas, valor, categoria)
+	def initialize(titulo, autor, isbn = "1", numero_de_paginas, valor, categoria)
 		
 		@titulo = titulo
 		@autor = autor
@@ -11,6 +11,7 @@ class Livro
 		@numero_de_paginas = numero_de_paginas
 		@valor = valor
 		@categoria = categoria
+		@desconto = 0.15
 		
 		#puts "Autor: #{autor}, ISBN: #{isbn}, Pág: #{numero_de_paginas}"
 
